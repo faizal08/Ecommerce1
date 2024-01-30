@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <title th:text="${title}"></title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="@{/imgs/theme/glamgazeiconsquare.jpg}">
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body style="background-image: url(https://spectacular-blog.lenskart.com/wp-content/uploads/2021/01/Guide-for-Men-Find-The-Right-Eyeglasses-Based-On-Your-Face-Shape_1_OI.jpg);background-repeat: no-repeat; background-size: cover">
+
+<section class="pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="row">
+
+                    <div class="col-lg-6" style="background-color: whitesmoke;margin-left: 350px" >
+                        <div class="login_wrap widget-taber-content p-30 background-white border-radius-5">
+                            <div class="padding_eight_all bg-white">
+                                <div class="heading_s1">
+                                    <h3 class="mb-30">Create an Account</h3>
+                                </div>
+                                <div th:if="${success}">
+                                    <p class="alert alert-success" th:text="${success}">Registration successful!</p>
+                                </div>
+
+                                <div th:if="${error}">
+                                    <p class="alert alert-danger" th:text="${error}"> error</p>
+                                </div>
+                                <form id="signupForm" th:action="@{/do-register}" method="POST" th:object="${customerDto}" onsubmit="return validateForm()">
+                                    <div class="d-md-flex" style="column-gap: 20px">
+                                        <div class="form-group">
+                                            <input type="text" id="firstName" name="firstName" placeholder="FirstName" th:field="*{firstName}" required>
+                                            <div class="error text-danger ms-2" id="firstNameError"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="lastName" name="lastName" placeholder="LastName" th:field="*{lastName}" required>
+                                            <div class="error text-danger ms-2" id="lastNameError"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="username" placeholder="Email" th:field="*{email}" required>
+                                        <div class="error text-danger ms-2" id="emailError"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="phone" name="mobileNumber" placeholder="MobileNumber" th:field="*{mobileNumber}" required>
+                                        <div class="error text-danger ms-2" id="phoneError"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="password" name="password" placeholder="Password" th:field="*{password}" required>
+                                        <div class="error text-danger ms-2" id="passwordError"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-fill-out btn-block hover-up">Submit &amp; Register</button>
+                                    </div>
+                                </form>
+                                <div class="text-muted text-center">Already have an account? <a th:href="@{/login}">Sign in now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/validation.js"></script>
+<script src="/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+<script src="/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="/js/plugins/slick.js"></script>
+<script src="/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/js/plugins/wow.js"></script>
+<script src="/js/plugins/jquery-ui.js"></script>
+<script src="/js/plugins/perfect-scrollbar.js"></script>
+<script src="/js/plugins/magnific-popup.js"></script>
+<script src="/js/plugins/select2.min.js"></script>
+<script src="/js/plugins/waypoints.js"></script>
+<script src="/js/plugins/counterup.js"></script>
+<script src="/js/plugins/jquery.countdown.min.js"></script>
+<script src="/js/plugins/images-loaded.js"></script>
+<script src="/js/plugins/isotope.js"></script>
+<script src="/js/plugins/scrollup.js"></script>
+<script src="/js/plugins/jquery.vticker-min.js"></script>
+<script src="/js/plugins/jquery.theia.sticky.js"></script>
+
+<script src="/js/main.js?v=3.4"></script>
+
+<script>
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var password = document.getElementById("password").value;
+        document.getElementById("firstNameError").innerHTML = "";
+        document.getElementById("lastNameError").innerHTML = "";
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("phoneError").innerHTML = "";
+        document.getElementById("passwordError").innerHTML = "";
+        var isValid = true;
+        if (!firstName.trim()) {
+            document.getElementById("firstNameError").innerHTML = "Enter a First Name";
+            isValid = false;
+        }
+        if (!lastName.trim()) {
+            document.getElementById("lastNameError").innerHTML = "Enter a Last Name";
+            isValid = false;
+        }
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.trim() || !emailPattern.test(email)) {
+            document.getElementById("emailError").innerHTML = "Enter a valid Email";
+            isValid = false;
+        }
+        var phonePattern = /^[0-9]+$/;
+        if (!phone.trim() || !phonePattern.test(phone)) {
+            document.getElementById("phoneError").innerHTML = "Enter a valid Mobile Number";
+            isValid = false;
+        }
+        if (!password.trim() || password.length < 6) {
+            document.getElementById("passwordError").innerHTML = "Enter a Password with at least 6 characters";
+            isValid = false;
+        }
+        return isValid;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <title>Shop</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/imgs/theme/glamgazeiconsquare.jpg}">
+
+    <link rel="stylesheet" th:href="@{/css/main.css?v=3.4}">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .black-line {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="~{fragments::hometop}" ></header>
+
+<div th:replace="~{fragments::mobiletop}"></div>
+
+<header>
+    <h1>Our Story </h1>
+    <img src="https://static.lenskart.com/images/cust_mailer/16-dec/images/aboutus_03.gif" alt="Company Image">
+</header>
+
+<section>
+    <p>
+        Founded in 2024, By an ex-Brocamp 'techie' with no money but truckloads of relentless passion to make a difference in this world, GlamGaze is one of the fastest growing eyewear business today.
+
+        Faizal along with his two co-founders Ivin Manuel and Thomas Joseph founded 'Glamgaze Ecommerce'. The aim was to truly add 'Glamgaze' in customers' lives by eliminating the retailers, setting up our own high quality manufacturing and supplying directly to the consumer. With this, they not only cuts costs, but also delivered high quality standards, supported with in house robotic lens manufacturing and assembly ensuring 100% precision and top quality control.
+
+        With a rapidly growing business reaching out to over 1,00,000 customers a month via a unique combination of a strong online business and uniquely designed physical stores, GlamGaze is revolutionizing the eyewear industry.
+
+        With a rapidly growing business reaching out to over 1,00,000 customers a month via a unique combination of a strong online business and uniquely designed physical stores, GlamGaze is revolutionizing the eyewear industry.
+    </p>
+    <div class="black-line"></div>
+</section>
+
+<header>
+    <h1>GREAT QUALITY </h1>
+    <img src="https://static.lenskart.com/images/cust_mailer/16-dec/images/aboutus_14.gif" alt="Company Image">
+</header>
+
+<section>
+    <p>
+        Made by robots We are India's first and the only brand to use robotic technique that delivers glasses which are accurate to 3 decimal places. These machines imported from Germany, ensure perfection on all front: an automated system that allows to inspect lenses, determine the geometric center, and load the lenses for edging without the need of a finishing block.
+        Mind of machine Our people have zero tolerance to error and our call center aims to delight every customer, solve their problems and work on their feedbacks.
+    </p>
+    <div class="black-line"></div>
+</section>
+
+<header>
+    <h1> VARIETY </h1>
+    <img src="https://static.lenskart.com/images/cust_mailer/16-dec/images/aboutus_18_06.gif" alt="Company Image">
+</header>
+
+<section>
+    <p>
+        An eye for an eye From sunglasses to reading glasses to contact lenses, we make everything that can help you see this beautiful world with more clarity.
+        We have it all. everyday basics. Everyday fashion. Evening wear. Not just that, we update our styles every year to keep up with fashion trends around the globe, taking inspiration from fashion capitals and the best designers of the world.
+    </p>
+    <div class="black-line"></div>
+</section>
+
+<header>
+    <h1>VALUE FOR MONEY </h1>
+    <img src="https://static.lenskart.com/images/cust_mailer/16-dec/images/aboutus_21_04.gif" alt="Company Image">
+</header>
+
+<section>
+    <p>
+        Not all good things in the world are expensive .Our prices are lower than any of your local optician. Our customers can find the most attractive packages on contact lenses
+        No middle man.No extra cost. No middleman simply means no middle ground. Our products come straight from the manufacturer, hence getting rid of all extra costs and burden.
+    </p>
+</section>
+
+<footer th:replace="~{fragments::downbar}"></footer>
+<div th:replace = "~{fragments::script}"></div>
+<script th:src="@{/js/plugins/jquery.elevatezoom.js}"></script>
+<script th:src="@{/js/shop.js?v=3.4}"></script>
+
+</body>
+</html>

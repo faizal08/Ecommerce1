@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <title th:text="${title}"></title>
+    <link rel="shortcut icon" type="image/x-icon" href="/customer/imgs/images/custLogo.png">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .login_wrap {
+            background: rgba(255, 255, 255, 0.4);
+            height: 600px;
+        }
+    </style>
+</head>
+<body style="background-image: url(https://spectacular-blog.lenskart.com/wp-content/uploads/2021/01/Guide-for-Men-Find-The-Right-Eyeglasses-Based-On-Your-Face-Shape_1_OI.jpg);">
+<section class="pt-150 pb-150" style="margin-left: -450px">
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="row">
+                    <div class="ReferralCode"></div>
+                    <div class="col-lg-6">
+                        <div class="login_wrap widget-taber-content p-30  border-radius-5" >
+
+                            <div class="padding_eight_all " style="margin-top: 30px">
+                                <div class="heading_s1"  >
+                                    <h3 class="mb-30">Create an Account</h3>
+                                </div>
+                                <form id="signupForm" th:action = "@{/registration1}" th:object = "${users}" method="post" >
+                                    <div th:if="${param.success}">
+                                        <p class="alert alert-success" th:text="${success}">Account registered Successfully</p>
+                                    </div>
+
+                                    <div th:if="${param.error}">
+                                        <p class="alert alert-danger" th:text="${error}">Invalid</p>
+                                    </div>
+
+                                    <div class="d-md-flex"style="column-gap: 20px" >
+
+                                        <div class="form-group">
+                                            <input type="text" id="firstName"  name="firstName" placeholder="FirstName" th:field="*{firstName}">
+                                            <div class="error text-danger ms-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="lastName"  name="lastName" placeholder="LastName" th:field="*{lastName}">
+                                            <div class="error text-danger ms-2"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" id="email" name="username" placeholder="Email" th:field="*{email}">
+                                        <div class="error text-danger ms-2"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="phone"  name="mobileNumber" placeholder="MobileNumber"  th:field="*{mobileNumber}">
+                                        <div class="error text-danger ms-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input  type="password" id="password" name="password" placeholder="Password"  th:field="*{password}">
+                                        <div class="error text-danger ms-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input  type="password" id="rePassword" name="confirmPassword" placeholder="Confirm password"  th:field ="*{confirmPassword}">
+                                        <div class="error text-danger ms-2"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-fill-out btn-block hover-up " style="background-color: #39cccc;margin-left: 120px">Submit &amp; Register</button>
+                                    </div>
+
+                                    <div>
+                                        <input type="hidden" name="referredBy" th:value="${referringUserId}" />
+                                    </div>
+                                </form>
+                                <div class="text-muted text-center"><p style="color: black;display: inline">Already have an account?</p> <a th:href="@{/login}" style="color: #39cccc">Log in now</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/js/validation.js"></script>
+<script src="/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+<script src="/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="/js/plugins/slick.js"></script>
+<script src="/js/plugins/jquery.syotimer.min.js"></script>
+<script src="/js/plugins/wow.js"></script>
+<script src="/js/plugins/jquery-ui.js"></script>
+<script src="/js/plugins/perfect-scrollbar.js"></script>
+<script src="/js/plugins/magnific-popup.js"></script>
+<script src="/js/plugins/select2.min.js"></script>
+<script src="/js/plugins/waypoints.js"></script>
+<script src="/js/plugins/counterup.js"></script>
+<script src="/js/plugins/jquery.countdown.min.js"></script>
+<script src="/js/plugins/images-loaded.js"></script>
+<script src="/js/plugins/isotope.js"></script>
+<script src="/js/plugins/scrollup.js"></script>
+<script src="/js/plugins/jquery.vticker-min.js"></script>
+<script src="/js/plugins/jquery.theia.sticky.js"></script>
+<script src="/js/main.js?v=3.4"></script>
+</body>
+</html>
