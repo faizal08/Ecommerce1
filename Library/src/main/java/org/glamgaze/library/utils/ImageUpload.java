@@ -15,8 +15,8 @@ import java.nio.file.StandardOpenOption;
 @Service
 public class ImageUpload
 {
-    String UPLOAD_FOLDER = "/Admin/src/main/resources/static/imgs/images";
-    String UPLOAD_FOLDER_CUSTOMER ="/Customer/src/main/resources/static/imgs/images";
+    String UPLOAD_FOLDER = "/home/ubuntu/ecommerce/Admin/src/main/resources/static/imgs/images";
+    String UPLOAD_FOLDER_CUSTOMER ="/home/ubuntu/ecommerce/Customer/src/main/resources/static/imgs/images";
 
     public String storeFile(MultipartFile file) throws IOException {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
